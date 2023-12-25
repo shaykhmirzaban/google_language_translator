@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" defer>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+
+        waitForTranslateElement();
+      }
+
+      function waitForTranslateElement() {
+        const translateElement = document.querySelector(".skiptranslate");
+
+        if (translateElement) {
+          // Translate element found, you can now work with it
+          const translate_element = translateElement;
+          const childNodes = translate_element.childNodes;
+
+          for (let i = 0; i < childNodes.length; i++) {
+            const node = childNodes[i];
+            if (node.nodeType !== 1) {
+              translate_element.removeChild(node);
+            }
+          }
+        } else {
+          // Translate element not found yet, wait and check again
+          setTimeout(waitForTranslateElement, 100);
+        }
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <h1>Hello Brother!</h1>
+
+    <div id="google_translate_element"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
